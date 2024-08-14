@@ -10,7 +10,7 @@ Neural_Monosynaptic_Connection_GUI is a interface app for neuroscientist to expl
 This GUI integrate 4 methods for detecting mono-syneptic connection.
 
 <p align="center">
-    <img src="GUI,jpg" width="100%">
+    <img src="GUI.jpg" width="100%">
 </p>
 
 ## How to use Mono GUI
