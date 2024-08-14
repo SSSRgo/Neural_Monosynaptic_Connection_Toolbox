@@ -13,7 +13,9 @@ This GUI integrate 4 methods for detecting mono-syneptic connection.
     <img src="GUI.jpg" width="100%">
 </p>
 
-## How to use Mono GUI
+
+
+## Quick start
 ### 1. Installing package and add the colormap path 
 ```matlab
 addpath('./colormap_CD-master\colormap_CD-master')
@@ -42,6 +44,43 @@ The data structure can be described as following:
 ### 4. Save data
 Sometimes, a bunch of neurons have been tagged (e.g., good, weak, bad). The tagged map can be saved and re-loaded the saved data future. 
 
+## Computation and Praparing data of Monosyneptic connetion 
+### Step 1 Get result by CoNNECT and GLMCC in python
+- Run file `./CoNNECT-master/estimate.py` to generate result of CoNNECT. The data was saved into `./detection_result/result_CoNNECT.csv`
+- Run file `./GLMCC-master/Est_Data.py` to generate result of GLMCC. The data was saved into `./detection_result/result_GLMCC.csv`
+
+### Step 2 Get result by stark's and buzsaki's lab, and generate data available for gui in matlab
+- Run file `generate_GUI_data.m` to generate data for gui. The data was saved into `./ACh_OXT004_012_monosyn_data.mat`
+
+
+There 4 methods to compute monosyneptic connetion, as following:
+### 1. Evan Stark lab
+https://github.com/EranStarkLab/CCH-deconvolution
+The CCH deconvolution algorithm described by Spivak et al. was designed to remove burst spiking artifacts from cross-correlation histograms (CCHs). The core algorithm is implemented by the MATLAB routine cchdeconv.m
+
+### 1. Evan Stark lab
+https://github.com/EranStarkLab/CCH-deconvolution
+
+### 1. Evan Stark lab
+https://github.com/EranStarkLab/CCH-deconvolution
+
+### 4. CoNNECT
+https://github.com/shigerushinomoto/CoNNECT/tree/master
+
+#### Requirements:
+- cython (version 0.29.6.)
+- tensorflow (version 1.13.1.)
+#### Run setup.py
+```python
+$ cd modules
+$ python setup.py build_ext -i
+```
+#### Estimate connectivity with "estimate.py"
+```python
+$ python estimate.py
+```
+Replace "spikefile" and "savefile" with the file names of your spike train data and estimated PSP data, respectively. The estimated PSP data is given as a matrix, whose column and row correspond to presynaptic and postsynaptic indices, respectively.
+ 
 ## Monosyneptic connetion detected methods
 - Evan Stark lab - https://github.com/EranStarkLab/CCH-deconvolution
 - Buzsaki lab - https://github.com/buzsakilab/buzcode/tree/master/analysis/monosynapticPairs
