@@ -18,7 +18,9 @@ This GUI integrate 4 methods for detecting mono-syneptic connection.
 ```matlab
 addpath('./colormap_CD-master\colormap_CD-master')
 ```
-### 2. Load data 
+### 2. Run GUI and Load data 
+run *MonoSynapticConnection_APP_exported.m* file to open the gui
+
 by pressing the button of *file* and find the *load data*. There is a example data: *ACh_OXT004_012_monosyn_data.mat*, which can be used to quick start.
 
 The data structure can be described as following:
