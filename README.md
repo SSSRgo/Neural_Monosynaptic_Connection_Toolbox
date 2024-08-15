@@ -15,7 +15,7 @@ This GUI integrate 4 methods for detecting mono-syneptic connection.
 
 
 
-## Quick start
+## Quick Start
 ### 1. Installing package and add the colormap path 
 ```matlab
 addpath('./colormap_CD-master\colormap_CD-master')
@@ -46,14 +46,38 @@ Sometimes, a bunch of neurons have been tagged (e.g., good, weak, bad). The tagg
 
 ## Computation and Praparing data of Monosyneptic connetion 
 ### Step 1 Get result by CoNNECT and GLMCC in python
+The four methods are based on different lauguages. For CoNNECT and GLMCC algorithm, the computations completed in python. So you'd firstly install seperated environments for them and run the script to get result, respectively.
+
+#### CoNNECT
+
+Install cython and tensorflow at your PC if you have not done before. After installation, run the script `estimate.py`.
+- Requirements:
+  - cython (version 0.29.6.)
+  - tensorflow (version 1.13.1.)
+- Run setup.py
+```python
+$ cd modules
+$ python setup.py build_ext -i
+```
 - Run file `./CoNNECT-master/estimate.py` to generate result of CoNNECT. The data was saved into `./detection_result/result_CoNNECT.csv`
+
+#### GLMCC
+
+Install cython and tensorflow at your PC if you have not done before. After installation, run the script `estimate.py`.
+- Requirements:
+  - numpy 
+  - scipy
+  - matplotlib
+  - multiprocessing
 - Run file `./GLMCC-master/Est_Data.py` to generate result of GLMCC. The data was saved into `./detection_result/result_GLMCC.csv`
 
 ### Step 2 Get result by stark's and buzsaki's lab, and generate data available for gui in matlab
 - Run file `generate_GUI_data.m` to generate data for gui. The data was saved into `./ACh_OXT004_012_monosyn_data.mat`
 
+### Step 3 Run GUI and Load data 
+run *MonoSynapticConnection_APP_exported.m* file to open the gui
 
-There 4 methods to compute monosyneptic connetion, as following:
+## Integrated 4 Methods in GUI:
 ### 1. Evan Stark lab
 https://github.com/EranStarkLab/CCH-deconvolution
 The CCH deconvolution algorithm described by Spivak et al. was designed to remove burst spiking artifacts from cross-correlation histograms (CCHs). The core algorithm is implemented by the MATLAB routine cchdeconv.m
@@ -66,20 +90,6 @@ https://github.com/EranStarkLab/CCH-deconvolution
 
 ### 4. CoNNECT
 https://github.com/shigerushinomoto/CoNNECT/tree/master
-
-#### Requirements:
-- cython (version 0.29.6.)
-- tensorflow (version 1.13.1.)
-#### Run setup.py
-```python
-$ cd modules
-$ python setup.py build_ext -i
-```
-#### Estimate connectivity with "estimate.py"
-```python
-$ python estimate.py
-```
-Replace "spikefile" and "savefile" with the file names of your spike train data and estimated PSP data, respectively. The estimated PSP data is given as a matrix, whose column and row correspond to presynaptic and postsynaptic indices, respectively.
  
 ## Monosyneptic connetion detected methods
 - Evan Stark lab - https://github.com/EranStarkLab/CCH-deconvolution
