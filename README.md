@@ -77,27 +77,33 @@ Install cython and tensorflow at your PC if you have not done before. After inst
 ### Step 3 Run GUI and Load data 
 run *MonoSynapticConnection_APP_exported.m* file to open the gui
 
-## Integrated 4 Methods in GUI:
+## Integrated 4 Monosyneptic connetion detected methods in GUI:
 ### 1. Evan Stark lab
 https://github.com/EranStarkLab/CCH-deconvolution
+
 The CCH deconvolution algorithm described by Spivak et al. was designed to remove burst spiking artifacts from cross-correlation histograms (CCHs). The core algorithm is implemented by the MATLAB routine cchdeconv.m
 
-### 1. Evan Stark lab
-https://github.com/EranStarkLab/CCH-deconvolution
+### 2. Buzsaki lab
+https://github.com/buzsakilab/buzcode/tree/master/analysis/monosynapticPairs
 
-### 1. Evan Stark lab
-https://github.com/EranStarkLab/CCH-deconvolution
+### 3. GLMCC
+https://github.com/NII-Kobayashi/GLMCC
+
+This program estimates interneuronal connections by fitting a generalized linear model (GLM) to spike cross-correlations 
 
 ### 4. CoNNECT
+
 https://github.com/shigerushinomoto/CoNNECT/tree/master
+
+Convolutional Neural Network for Estimating synaptic Connectivity from spike Trains.
  
-## Monosyneptic connetion detected methods
+###
 - Evan Stark lab - https://github.com/EranStarkLab/CCH-deconvolution
 - Buzsaki lab - https://github.com/buzsakilab/buzcode/tree/master/analysis/monosynapticPairs
 - GLMCC - https://github.com/NII-Kobayashi/GLMCC
 - CoNNECT - https://github.com/shigerushinomoto/CoNNECT/tree/master
 
-## Matrix
+### Matrix
 - Evan Stark lab 
   - Connection Matrix: act/sil
   - Weight Matrix: eSTG
