@@ -18,7 +18,8 @@ This GUI integrate 4 methods for detecting mono-syneptic connection.
 ## Quick Start
 ### 1. Installing package and add the colormap path 
 ```matlab
-addpath('./colormap_CD-master\colormap_CD-master')
+addpath('./colormap_CD-master/colormap_CD-master')
+addpath('./CCH-deconvolution-main')
 ```
 ### 2. Run GUI and Load data 
 run *MonoSynapticConnection_APP_exported.m* file to open the gui
